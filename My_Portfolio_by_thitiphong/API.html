@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+    <script>
+       
+    </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<title> </title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+        <meta name="author" content="templatemo">
+        <!-- 
+        -->
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- animate -->
+		<link rel="stylesheet" href="css/animate.min.css">
+		<!-- bootstrap -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<!-- font-awesome -->
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<!-- google font -->
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700,800' rel='stylesheet' type='text/css'>
+		<!-- fullpage -->
+		<link rel="stylesheet" href="css/jquery.fullPage.css">
+		<!-- custom -->
+		<link rel="stylesheet" href="css/templatemo-style.css">
+		<link rel="stylesheet" href="css/css.css">
+
+	</head>
+	<nav>
+		<div class="wrapper">
+		  <div class="logo"><a href="#">PORTFOLIO</a></div>
+		  <input type="radio" name="slider" id="menu-btn">
+		  <input type="radio" name="slider" id="close-btn">
+		  <ul class="nav-links">
+			<label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+			<li><a href="index.html">HOME</a></li>
+			<li><a href="#">JS</a></li>
+			<li><a href="#">API</a></li>
+		  </ul>
+		  <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+		</div>
+	  </nav>
+	<body>
+
+		<!-- start work -->
+		<div id="work" class="section">
+			<div class="container">
+				<div class="row">
+                    <div class="api">
+                        <h1>ดึงapi มาใช้ ตัวอย่าง</h1>
+                        <h2>Click to change</h2>
+                        <H3><p id="demo2"></p></H3>
+                        <button onclick="myFunction()">Click me</button>        
+                    </div>
+                    <script>
+                        
+                  function myFunction() {
+                    fetch("https://catfact.ninja/fact")
+                      .then(function(response){
+                        return response.json()
+                      })
+                      .then(function(data){
+                        let txt = "";
+                          for (let x in data) {
+                            txt += data[x] + " ";
+                          document.getElementById("demo2").innerHTML = txt;
+                          };
+                      
+                        return data;
+                      })  
+                }
+                    </script>
+				</div>
+			</div>
+		</div>
+		<!-- end work -->
+
+		<!-- start footer -->
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 wow fadeIn" data-wow-delay="0.9s">
+						<p>Copyright &copy; 2023 by THITIPHONG CHARI (KKTECH) </p>
+						<hr>
+						<ul class="social-icon">
+							<li><a href="#" class="fa fa-facebook"></a></li>
+							<li><a href="#" class="fa fa-twitter"></a></li>
+							<li><a href="#" class="fa fa-instagram"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- end footer -->
+
+	</div>
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.fullPage.js"></script>
+		<script src="js/smoothscroll.js"></script>
+		<script src="js/wow.min.js"></script>
+		<script src="js/jquery.simple-text-rotator.js"></script>
+		<script src="js/custom.js"></script>
+
+	</body>
+</html>

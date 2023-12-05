@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script>
+        function loginUser() {
+    var username = prompt('Enter your username');
+    var user;
+
+    if (username == "admin") {
+        let password = prompt('Enter password');
+        if (password == "123456") {
+            user = "Admim";
+        } else {
+            user = "Guest";
+        }
+    } else {
+        user = "Guest";
+    }
+
+    alert('Welcome ' + user);
+}
+//-------------------------------------
+let calculator = {
+    read() {
+        this.a = prompt('Enter number 1');
+        this.b = prompt('Enter number 2');
+    },
+    sum() {
+        return Number(this.a) + Number(this.b);
+    },
+    mul() {
+        return this.a * this.b;
+    }
+};
+
+function calculateSum() {
+    calculator.read();
+    alert(calculator.sum());
+}
+
+function calculateMul() {
+    calculator.read();
+    alert(calculator.mul());
+}
+//--------------------------------------
+var myObject = {};
+
+function createObject() {
+    var myObject = {}; 
+
+    while (true) {
+        var key = prompt("(Enter a fruit name or 'stop' to finish):");
+        if (key.toLowerCase() === 'stop') {
+            break;
+        }
+        var value = prompt("Enter value:");
+
+        if (value >= 2) {
+            let objective = key + 's';
+            myObject[objective] = value;
+        } else {
+            myObject[key] = value;
+        }
+    }
+
+    console.log(myObject);
+    alert("Object created. Check the console for details.");
+}
+//--------------------------------------
+const daysToSeconds = days => days * 24 * 60 * 60;
+
+function convertDaysToSeconds() {
+    const numberOfDays = prompt("Enter the number of days:");
+    const seconds = daysToSeconds(numberOfDays);
+    
+    console.log(`${numberOfDays} days is equal to ${seconds} seconds`);
+    alert(`${numberOfDays} days is equal to ${seconds} seconds`);
+}
+//--------------------------------------
+const fahrenheitToCelsius = fahrenheit => (fahrenheit - 32) * 5 / 9;
+
+function convertTemperature() {
+    const temperatureInFahrenheit = prompt("Enter temperature in Fahrenheit:");
+    const temperatureInCelsius = fahrenheitToCelsius(parseFloat(temperatureInFahrenheit));
+    alert(`${temperatureInFahrenheit} degrees Fahrenheit is equal to ${temperatureInCelsius.toFixed(2)} degrees Celsius`);
+}
+    </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+		<meta charset="utf-8">
+		<title> </title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+        <meta name="author" content="templatemo">
+        <!-- 
+        -->
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- animate -->
+		<link rel="stylesheet" href="css/animate.min.css">
+		<!-- bootstrap -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<!-- font-awesome -->
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<!-- google font -->
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700,800' rel='stylesheet' type='text/css'>
+		<!-- fullpage -->
+		<link rel="stylesheet" href="css/jquery.fullPage.css">
+		<!-- custom -->
+		<link rel="stylesheet" href="css/templatemo-style.css">
+		<link rel="stylesheet" href="css/css.css">
+
+	</head>
+	<nav>
+		<div class="wrapper">
+		  <div class="logo"><a href="#">PORTFOLIO</a></div>
+		  <input type="radio" name="slider" id="menu-btn">
+		  <input type="radio" name="slider" id="close-btn">
+		  <ul class="nav-links">
+			<label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+			<li><a href="index.html">HOME</a></li>
+			<li><a href="#">JS</a></li>
+			<li><a href="API.html">API</a></li>
+		  </ul>
+		  <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+		</div>
+	  </nav>
+	<body>
+
+		<!-- start work -->
+		<div id="work" class="section">
+			<div class="container">
+				<div class="row">
+                        <h4>แนะนำ ให้ลองใส่ user Admim & password 123456 ถ้าไม่ใส่อะไรเลย จะเป็น Guest </h4>
+                        <button  onclick="loginUser()"> Login </button><br><br><br>
+                        <h4>(Calculate Sum)จะเอาไว้บวกเลข, &  (Calculate Multiplication)จะเอาไว้คูณ, </h4>
+                        <button  onclick="calculateSum()"> Calculate Sum </button> <button  onclick="calculateMul()"> Calculate Multiplication </button><br><br><br>
+                        <h4>ผู้ใช้ป้อนชื่อผลไม้และค่าที่เกี่ยวข้องกับผลไม้นั้น ๆ จนกว่าผู้ใช้จะป้อน 'stop' เพื่อสิ้นสุดกระบวนการทำงาน</h4>
+                        <button  onclick="createObject()">Create Object</button><br><br><br>
+                        <h4>แปลงจำนวนวันนั้นเป็นจำนวนวินาทีด้วยฟังก์ชัน daysToSeconds แล้วแสดงผลลัพธ์ใน console และแสดง alert สำหรับผู้ใช้ด้วยค่าที่แปลงแล้ว.</h4>
+                        <button  onclick="convertDaysToSeconds()"> Convert Days to Seconds </button><br><br><br>
+                        <h4>ให้ผู้ใช้ป้อนอุณหภูมิในหน่วย Fahrenheit ผ่าน prompt แล้วแปลงอุณหภูมินั้นเป็นอุณหภูมิในหน่วย Celsius ด้วยฟังก์ชัน fahrenheitToCelsius และแสดงผลลัพธ์ใน alert.</h4>
+                        <button  onclick="convertTemperature()"> Convert Temperature </button><br><br><br>
+				</div>
+			</div>
+		</div>
+		<!-- end work -->
+
+		<!-- start footer -->
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 wow fadeIn" data-wow-delay="0.9s">
+						<p>Copyright &copy; 2023 by THITIPHONG CHARI (KKTECH) </p>
+						<hr>
+						<ul class="social-icon">
+							<li><a href="#" class="fa fa-facebook"></a></li>
+							<li><a href="#" class="fa fa-twitter"></a></li>
+							<li><a href="#" class="fa fa-instagram"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- end footer -->
+
+	</div>
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.fullPage.js"></script>
+		<script src="js/smoothscroll.js"></script>
+		<script src="js/wow.min.js"></script>
+		<script src="js/jquery.simple-text-rotator.js"></script>
+		<script src="js/custom.js"></script>
+
+	</body>
+</html>
