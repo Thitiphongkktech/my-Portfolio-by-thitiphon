@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart</title>
+</head>
+    <script>
+       
+    </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<title> </title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+        <meta name="author" content="templatemo">
+        <!-- 
+        -->
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- animate -->
+		<link rel="stylesheet" href="css/animate.min.css">
+		<!-- bootstrap -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<!-- font-awesome -->
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<!-- google font -->
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700,800' rel='stylesheet' type='text/css'>
+		<!-- fullpage -->
+		<link rel="stylesheet" href="css/jquery.fullPage.css">
+		<!-- custom -->
+		<link rel="stylesheet" href="css/templatemo-style.css">
+		<link rel="stylesheet" href="css/css.css">
+
+	</head>
+	<nav>
+		<div class="wrapper">
+		  <div class="logo"><a href="#">PORTFOLIO</a></div>
+		  <input type="radio" name="slider" id="menu-btn">
+		  <input type="radio" name="slider" id="close-btn">
+		  <ul class="nav-links">
+			<label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+			<li><a href="index.html">HOME</a></li>
+			<li><a href="JS.html">JS</a></li>
+			<li><a href="API.Html">API</a></li>
+            <li><a href="#">Chart</a></li>
+		  </ul>
+		  <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+		</div>
+	  </nav>
+	<body>
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+            fetch('https://raw.githubusercontent.com/samayo/country-json/master/src/country-by-population.json')
+              .then(response => response.json())
+              .then(data => {
+                // นำข้อมูลมาใช้ต่อไปตามต้องการ
+                console.log(data);
+              })
+              .catch(error => console.error('เกิดข้อผิดพลาด: ', error));
+          });
+        </script>    
+        <div>
+            <h1 id="Chart">ประชากรในแต่ละประเทศ</h1>
+            <canvas id="myChart"  width="350" height="350"></canvas>
+          </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <canvas id="barChart"  width="856" height="428" ></canvas>
+        <script>
+            const xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+            const yValues = [55, 49, 44, 24, 15];
+            const barColors = [
+              "#b91d47",
+              "#00aba9",
+              "#2b5797",
+              "#e8c3b9",
+              "#1e7145",
+            ];
+  
+            new Chart("myChart", {
+              type: "pie",
+              data: {
+                labels: xValues,
+                datasets: [
+                  {
+                    backgroundColor: barColors,
+                    data: yValues,
+                  },
+                ],
+              },
+              options: {
+                title: {
+                  display: true,
+                  text: "World Wide Wine Production 2018",
+                },
+              },
+            });
+          </script>
+          <script>
+            const x = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+  
+            new Chart("barChart", {
+              type: "line",
+              data: {
+                labels: xValues,
+                datasets: [
+                  {
+                    data: [
+                      860, 1140, 1060, 1060, 1070, 1110, 1330, 2210, 7830, 2478,
+                    ],
+                    borderColor: "red",
+                    fill: false,
+                  },
+                  {
+                    data: [
+                      1600, 1700, 1700, 1900, 2000, 2700, 4000, 5000, 6000, 7000,
+                    ],
+                    borderColor: "green",
+                    fill: false,
+                  },
+                  {
+                    data: [
+                      300, 700, 2000, 5000, 6000, 4000, 2000, 1000, 200, 100,
+                    ],
+                    borderColor: "blue",
+                    fill: false,
+                  },
+                ],
+              },
+              options: {
+                legend: { display: false },
+              },
+            });
+          </script>
+	
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 wow fadeIn" data-wow-delay="0.9s">
+						<p>Copyright &copy; 2023 by THITIPHONG CHARI (KKTECH) </p>
+						<hr>
+						<ul class="social-icon">
+							<li><a href="#" class="fa fa-facebook"></a></li>
+							<li><a href="#" class="fa fa-twitter"></a></li>
+							<li><a href="#" class="fa fa-instagram"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- end footer -->
+
+	</div>
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.fullPage.js"></script>
+		<script src="js/smoothscroll.js"></script>
+		<script src="js/wow.min.js"></script>
+		<script src="js/jquery.simple-text-rotator.js"></script>
+		<script src="js/custom.js"></script>
+
+	</body>
+</html>
