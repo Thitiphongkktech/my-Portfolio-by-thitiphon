@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab-1 JS14-extar</title>
+</head>
+    <script>
+       
+    </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<title> </title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+        <meta name="author" content="templatemo">
+        <!-- 
+        -->
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- animate -->
+		<link rel="stylesheet" href="css/animate.min.css">
+		<!-- bootstrap -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<!-- font-awesome -->
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<!-- google font -->
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700,800' rel='stylesheet' type='text/css'>
+		<!-- fullpage -->
+		<link rel="stylesheet" href="css/jquery.fullPage.css">
+		<!-- custom -->
+		<link rel="stylesheet" href="css/templatemo-style.css">
+		<link rel="stylesheet" href="css/css.css">
+
+	</head>
+	<nav>
+		<div class="wrapper">
+		  <div class="logo"><a href="#">PORTFOLIO</a></div>
+		  <input type="radio" name="slider" id="menu-btn">
+		  <input type="radio" name="slider" id="close-btn">
+		  <ul class="nav-links">
+			<label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+			<li><a href="index.html">HOME</a></li>
+			<li><a href="JS.html">JS</a></li>
+			<li><a href="API.Html">API</a></li>
+            <li><a href="#">JS014-extar</a></li>
+		  </ul>
+		  <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+		</div>
+	  </nav>
+	<body>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+            fetch('https://raw.githubusercontent.com/samayo/country-json/master/src/country-by-population.json')
+              .then(response => response.json())
+              .then(data => {
+                const countries = data.map(country => country.country);
+                const populations = data.map(country => country.population);
+        
+                const lineColor = "rgba(255,255,255)";
+        
+                new Chart("myChart", {
+                  type: "line",
+                  data: {
+                    labels: countries,
+                    datasets: [{
+                      label: 'Population',
+                      data: populations,
+                      borderColor: lineColor,
+                      fill: false
+                    }]
+                  },
+                  options: {
+                    title: {
+                      display: true,
+                      text: "World Population by Country (Line Chart)"
+                    }
+                  }
+                });
+              })
+              .catch(error => console.error('เกิดข้อผิดพลาด: ', error));
+          });
+        </script>
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+            fetch('https://raw.githubusercontent.com/samayo/country-json/master/src/country-by-population.json')
+              .then(response => response.json())
+              .then(data => {
+                // นำข้อมูลมาใช้ต่อไปตามต้องการ
+                console.log(data);
+              })
+              .catch(error => console.error('เกิดข้อผิดพลาด: ', error));
+          });
+        </script>    
+        <div>
+            <h1 id="Chart">ประชากรในแต่ละประเทศ</h1>
+            <canvas id="myChart" style="width: 358px; height: 358px; display: block; box-sizing: border-box;" width="716" height="716"></canvas>
+          </div>
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 wow fadeIn" data-wow-delay="0.9s">
+						<p>Copyright &copy; 2023 by THITIPHONG CHARI (KKTECH) </p>
+						<hr>
+						<ul class="social-icon">
+							<li><a href="#" class="fa fa-facebook"></a></li>
+							<li><a href="#" class="fa fa-twitter"></a></li>
+							<li><a href="#" class="fa fa-instagram"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- end footer -->
+
+	</div>
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.fullPage.js"></script>
+		<script src="js/smoothscroll.js"></script>
+		<script src="js/wow.min.js"></script>
+		<script src="js/jquery.simple-text-rotator.js"></script>
+		<script src="js/custom.js"></script>
+
+	</body>
+</html>
